@@ -13,8 +13,8 @@ class PhoneBook{
     PhoneBook();
     void addContact();
     void showContacts() const;
-    void searchContact(const string& name) const;
-    void deleteContact(const string& name);
+    bool searchContact(const string& name) const;
+    bool deleteContact(const string& name);
 };
 
 #endif

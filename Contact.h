@@ -9,8 +9,7 @@ string phone;
 
 public:
 //Constructors
-Contact(){
-}
+Contact() = default;
 Contact(const string& name, const string& phone);
 //Getter
 string getName() const;
@@ -20,8 +19,9 @@ void setName(const string& name);
 void setPhone(const string& phone);
 //for saving as string
 string toString() const;
-static Contact FromString(const string& line);
+
+static Contact fromString(const string& line);
 
 
-#endif
 };
+#endif

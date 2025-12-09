@@ -1,7 +1,7 @@
 #include "PhoneBook.h"
 #include <fstream>
 #include <iostream>
-
+#include <algorithm>
 using namespace std;
 
 PhoneBook::PhoneBook(){
@@ -63,8 +63,7 @@ bool PhoneBook::searchContact(const string& name) const{
     return found;
 }
 bool PhoneBook::deleteContact(const string& name){
-    auto it = remove_if(contacts.begin(),contacts.end(),
-[&](const Contact& c){return c.getName() == name;});
+    auto it = remove_if(contacts.begin(),contacts.end(),[&](const Contact& c){return c.getName() == name;});
 
 if (it != contacts.end()){
     contacts.erase(it,contacts.end());

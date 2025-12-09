@@ -11,7 +11,7 @@ class PhoneBook{
     void saveToFile() const;
     public:
     PhoneBook();
-    void addContact();
+    void addContact(const Contact& c) ;
     void showContacts() const;
     bool searchContact(const string& name) const;
     bool deleteContact(const string& name);

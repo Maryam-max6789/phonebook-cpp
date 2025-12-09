@@ -1,10 +1,20 @@
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
 
-
-void addContact();
-void showContact();
-void searchContact();
-void deleteContact();
+#include <vector>
+#include "Contact.h"
+class PhoneBook{ 
+    private:
+    vector<Contact> contacts;
+    const string filename = "phonebook.txt";
+    void loadFromFile();
+    void saveToFile() const;
+    public:
+    PhoneBook();
+    void addContact();
+    void showContacts() const;
+    void searchContact(const string& name) const;
+    void deleteContact(const string& name);
+};
 
 #endif
